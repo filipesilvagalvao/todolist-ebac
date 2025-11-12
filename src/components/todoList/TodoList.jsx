@@ -3,6 +3,7 @@ import { GlobalContext } from "../../GlobalContext"
 import { useContext, useRef, useState } from "react"
 import TodoForm from "../todoForm/TodoForm";
 import TodoItem from "../todoItem/TodoItem";
+import TodoFilter from "../todoFilter/TodoFilter";
 
 function TodoList() {
     const { tasks, removeTask, putChecked } = useContext(GlobalContext);
@@ -30,16 +31,9 @@ function TodoList() {
 
                 {/*Filtro de tarefas */}
                 <div className={styles.section__filter}>
-
-                    <input type="radio" name="filter" id="all" className={styles.section__filterCheckbox} value="all" checked={check === "all"} onChange={(e) => setCheck(e.target.value)} />
-                    <label htmlFor="all" className={styles.section__filterLabel} onClick={() => filterList("")} >Todas</label> {/*FILTRA POR TODOS OS ITEMS DA LISTA */}
-
-                    <input type="radio" name="filter" id="check" className={styles.section__filterCheckbox} value="check" checked={check === "check"} onChange={(e) => setCheck(e.target.value)} />
-                    <label htmlFor="check" className={styles.section__filterLabel} onClick={() => filterList(false)}>Concluídas</label>  {/*FILTRA POR ITEMS CONCLUÍDOS DA LISTA */}
-
-                    <input type="radio" name="filter" id="pending" className={styles.section__filterCheckbox} value="pending" checked={check === "pending"} onChange={(e) => setCheck(e.target.value)} />
-                    <label htmlFor="pending" className={styles.section__filterLabel} onClick={() => filterList(true)}>Pendentes</label>  {/*FILTRA POR ITEMS PENDENTES DA LISTA */}
-
+                    <TodoFilter idName="all" check={check} setCheck={setCheck} filterList={filterList} fillterValue="" nameLabel="Todas" />
+                    <TodoFilter idName="check" check={check} setCheck={setCheck} filterList={filterList} fillterValue={false} nameLabel="Concluídas" />
+                    <TodoFilter idName="pending" check={check} setCheck={setCheck} filterList={filterList} fillterValue={true} nameLabel="Pendentes" />
                 </div>
 
                 {/*Adicionar tarefas */}

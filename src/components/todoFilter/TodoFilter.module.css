@@ -1,0 +1,17 @@
+.section__filterLabel {
+  background-color: var(--bg-color-4);
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: var(--text-color-2);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.section__filterCheckbox {
+  display: none;
+}
+
+.section__filterCheckbox:checked + .section__filterLabel {
+  background-color: var(--primary-color);
+}
