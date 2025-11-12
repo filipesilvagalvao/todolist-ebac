@@ -16,7 +16,7 @@ As instruções assumem que você tem Node.js e npm instalados.
 1. Clone o repositório (ou acesse a pasta do projeto):
 
 	git clone <https://github.com/filipesilvagalvao/todolist-ebac>
-	cd todoList2
+	cd todoList ou o "nome da pasta que tu der"
 
 2. Instale as dependências:
 
