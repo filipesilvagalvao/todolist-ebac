@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styles from './TodoFilter.module.css'
 
 function TodoFilter({idName, check, setCheck, filterList,fillterValue,nameLabel}) {
@@ -9,4 +10,4 @@ function TodoFilter({idName, check, setCheck, filterList,fillterValue,nameLabel}
     )
 }
 
-export default TodoFilter
+export default memo(TodoFilter)
