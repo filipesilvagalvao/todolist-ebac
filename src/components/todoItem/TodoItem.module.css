@@ -48,3 +48,9 @@
     }
   }
 }
+
+.section__item:has(.section__itemCheckbox:checked) .section__itemText {
+  text-decoration: line-through;
+  color: var(--text-color-3);
+  opacity: 0.6;
+}
